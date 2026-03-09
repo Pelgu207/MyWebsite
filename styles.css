@@ -1,0 +1,401 @@
+/* ============================================================
+   styles.css – Personal Website Stylesheet
+   ============================================================
+   Professional, minimal design using Inter font.
+   Neutral palette: white background, dark text, teal accent.
+   ============================================================ */
+
+/* ── Google Font ────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── CSS Reset / Base ───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ── CHANGE ACCENT COLOR HERE ── */
+  --accent:        #0d9488;   /* teal-600 */
+  --accent-dark:   #0f766e;   /* teal-700  (hover) */
+  --text-primary:  #111827;   /* near-black */
+  --text-secondary:#6b7280;   /* gray-500  */
+  --bg:            #ffffff;
+  --bg-subtle:     #f9fafb;   /* gray-50   */
+  --border:        #e5e7eb;   /* gray-200  */
+  --radius:        0.5rem;
+  --shadow:        0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:     0 4px 6px  rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Utility ────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Screen-reader-only text: visually hidden but read aloud */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Navigation Bar ─────────────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+}
+
+/* ── CHANGE YOUR NAME IN THE NAV ── */
+.nav-brand {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ── Hero Section ───────────────────────────────────────────── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 7rem 1.5rem 5rem;
+  min-height: calc(100vh - 3.5rem);
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(13, 148, 136, 0.08);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.hero-intro {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-secondary);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-outline:hover {
+  background: rgba(13, 148, 136, 0.06);
+}
+
+/* ── Social Links Row ───────────────────────────────────────── */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.social-link:hover {
+  color: var(--accent);
+}
+
+.social-link svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* ════════════════════════════════════════════════════════════
+   CV PAGE STYLES
+   ════════════════════════════════════════════════════════════ */
+
+/* ── CV Header ───────────────────────────────────────────────── */
+.cv-header {
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.cv-header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.cv-header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.cv-header .btn-group {
+  margin-bottom: 0;
+}
+
+/* ── PDF Viewer ──────────────────────────────────────────────── */
+.pdf-section {
+  padding: 2rem 1.5rem;
+}
+
+.pdf-notice {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.pdf-container {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-subtle);
+  /* Height is set via JS for proper aspect ratio */
+}
+
+.pdf-embed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 70vh;
+  border: none;
+}
+
+/* Fallback message shown when PDF cannot be displayed */
+.pdf-fallback {
+  display: none;           /* shown by JS if embed fails */
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.pdf-fallback p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* ── CV Sections (placeholder / fallback) ───────────────────── */
+.cv-sections {
+  padding: 2rem 1.5rem 4rem;
+}
+
+.cv-section {
+  margin-bottom: 3rem;
+}
+
+.cv-section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.cv-item {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.cv-item-title {
+  font-weight: 600;
+  font-size: 0.97rem;
+}
+
+.cv-item-date {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.cv-item-sub {
+  font-size: 0.88rem;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.cv-item p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Skills chips */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-chip {
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero {
+    padding: 4rem 1rem 3rem;
+    min-height: calc(100vh - 3.5rem);
+  }
+
+  .cv-item-header {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
