@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── CHANGE PAGE TITLE ── -->
+  <title>CV – Your Name</title>
+
+  <meta name="description" content="Curriculum Vitae of Your Name." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="container">
+      <!-- ── CHANGE YOUR NAME ── -->
+      <a class="nav-brand" href="index.html">Your Name</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════
+       CV HEADER
+       ════════════════════════════════════════════ -->
+  <header class="cv-header">
+    <div class="container">
+      <!-- ── CHANGE YOUR NAME ── -->
+      <h1>Your Name</h1>
+      <!-- ── CHANGE YOUR JOB TITLE / ROLE ── -->
+      <p>Your Job Title · your.email@example.com</p>
+
+      <div class="btn-group">
+        <!-- ── REPLACE cv.pdf WITH THE ACTUAL FILENAME OF YOUR CV ── -->
+        <a href="cv.pdf" download class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+               stroke-width="2" stroke="currentColor" width="18" height="18">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+          </svg>
+          Download PDF
+        </a>
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════
+       PDF VIEWER
+       To show your actual CV:
+         1. Export your CV as a PDF.
+         2. Name it  cv.pdf  and place it in the
+            same folder as this file.
+         3. The browser will display it below.
+            Visitors can also download it using
+            the button above.
+       ════════════════════════════════════════════ -->
+  <section class="pdf-section container" id="pdf-section">
+    <p class="pdf-notice">
+      <span aria-hidden="true">ℹ</span>
+      <span class="sr-only">Note:</span>
+      If the PDF does not load, please
+      <a href="cv.pdf" download style="color:var(--accent)">download it directly</a>.
+    </p>
+
+    <div class="pdf-container" id="pdf-container">
+      <!--
+        ── TO USE YOUR PDF:
+           Replace  cv.pdf  with the path to your CV PDF file.
+           Example: <embed src="your-cv-filename.pdf" ...>
+      -->
+      <embed
+        id="pdf-embed"
+        src="cv.pdf"
+        type="application/pdf"
+        class="pdf-embed"
+        title="CV – Your Name"
+      />
+
+      <!-- Fallback shown when the browser cannot render the PDF inline -->
+      <div class="pdf-fallback" id="pdf-fallback">
+        <p>Your browser does not support inline PDFs.</p>
+        <a href="cv.pdf" download class="btn btn-primary">Download CV as PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       PLACEHOLDER CV SECTIONS
+       These are shown below the PDF viewer so
+       visitors on mobile (where PDF embeds can
+       be tricky) can still read your CV content.
+
+       ── HOW TO USE:
+          Fill in your real data below, then
+          optionally hide these sections once
+          you're happy relying on the PDF alone
+          (add  style="display:none"  to the
+           <section class="cv-sections"> tag).
+       ════════════════════════════════════════════ -->
+  <section class="cv-sections container">
+
+    <!-- ── EXPERIENCE ─────────────────────────────── -->
+    <div class="cv-section">
+      <h2>Experience</h2>
+
+      <!-- ── ADD YOUR OWN JOBS / REMOVE THIS PLACEHOLDER ── -->
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span class="cv-item-title">Job Title</span>
+          <span class="cv-item-date">Month Year – Present</span>
+        </div>
+        <div class="cv-item-sub">Company Name · Location</div>
+        <p>
+          Brief description of your responsibilities, achievements, and technologies used.
+          Focus on impact: what did you build, improve, or deliver?
+        </p>
+      </div>
+
+      <!-- Duplicate the block above to add more roles -->
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span class="cv-item-title">Previous Job Title</span>
+          <span class="cv-item-date">Month Year – Month Year</span>
+        </div>
+        <div class="cv-item-sub">Previous Company · Location</div>
+        <p>
+          Brief description of key contributions and accomplishments in this role.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── EDUCATION ───────────────────────────────── -->
+    <div class="cv-section">
+      <h2>Education</h2>
+
+      <!-- ── ADD YOUR OWN EDUCATION / REMOVE THIS PLACEHOLDER ── -->
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span class="cv-item-title">Degree Title</span>
+          <span class="cv-item-date">Year – Year</span>
+        </div>
+        <div class="cv-item-sub">University / Institution Name · Location</div>
+        <p>
+          Relevant modules, grade, dissertation topic, or notable achievements.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── SKILLS ──────────────────────────────────── -->
+    <div class="cv-section">
+      <h2>Skills</h2>
+
+      <!-- ── REPLACE WITH YOUR OWN SKILLS ── -->
+      <div class="skills-list">
+        <span class="skill-chip">Skill One</span>
+        <span class="skill-chip">Skill Two</span>
+        <span class="skill-chip">Skill Three</span>
+        <span class="skill-chip">Skill Four</span>
+        <span class="skill-chip">Skill Five</span>
+        <span class="skill-chip">Skill Six</span>
+        <span class="skill-chip">Skill Seven</span>
+        <span class="skill-chip">Skill Eight</span>
+      </div>
+    </div>
+
+    <!-- ── PROJECTS ────────────────────────────────── -->
+    <div class="cv-section">
+      <h2>Projects</h2>
+
+      <!-- ── ADD YOUR OWN PROJECTS / REMOVE THIS PLACEHOLDER ── -->
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span class="cv-item-title">Project Name</span>
+          <span class="cv-item-date">Year</span>
+        </div>
+        <div class="cv-item-sub">
+          <!-- ── CHANGE THIS LINK ── -->
+          <a href="https://github.com/yourusername/project-repo"
+             target="_blank" rel="noopener"
+             style="color:var(--accent); text-decoration:none;">
+            github.com/yourusername/project-repo
+          </a>
+        </div>
+        <p>
+          What the project does, the technologies used, and what you learned or achieved.
+        </p>
+      </div>
+
+      <!-- Duplicate to add more projects -->
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span class="cv-item-title">Another Project</span>
+          <span class="cv-item-date">Year</span>
+        </div>
+        <div class="cv-item-sub">Personal / Academic project</div>
+        <p>
+          Description of the project, its goals, and your role in building it.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════ -->
+  <footer>
+    <!-- ── CHANGE YOUR NAME ── -->
+    <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
